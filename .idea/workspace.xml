@@ -4,29 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="885c9a28-8ea8-42e2-9406-3f7c54562705" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chatting Application.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/icons/1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/icons/1392886883.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/icons/2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/icons/3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/icons/3icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/icons/arrow.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/icons/border.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/icons/bunty.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/icons/camera.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/icons/gaitonde.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/icons/glass.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/icons/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/icons/phone.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/icons/video.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Server.java" afterDir="false" />
-    </list>
+    <list default="true" id="885c9a28-8ea8-42e2-9406-3f7c54562705" name="Changes" comment="First Commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -68,9 +46,20 @@
       <option name="presentableId" value="Default" />
       <updated>1688911488322</updated>
     </task>
+    <task id="LOCAL-00001" summary="First Commit">
+      <option name="closed" value="true" />
+      <created>1688913150851</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1688913150851</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="First Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="First Commit" />
   </component>
 </project>
