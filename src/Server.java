@@ -7,13 +7,13 @@ import java.text.*;
 import java.net.*;
 import java.io.*;
 
-public class Server implements ActionListener {
+public class Server extends JFrame implements ActionListener {
 
     JTextField text;
     JPanel a1;
     static Box vertical = Box.createVerticalBox();
     static JFrame f = new JFrame();
-    static DataOutputStream dout;
+    static DataOutputStream dot;
 
     Server() {
 
@@ -118,7 +118,7 @@ public class Server implements ActionListener {
 
             a1.add(vertical, BorderLayout.PAGE_START);
 
-            dout.writeUTF(out);
+            dot.writeUTF(out);
 
             text.setText("");
 
@@ -161,7 +161,7 @@ public class Server implements ActionListener {
             while(true) {
                 Socket s = skt.accept();
                 DataInputStream din = new DataInputStream(s.getInputStream());
-                dout = new DataOutputStream(s.getOutputStream());
+                dot = new DataOutputStream(s.getOutputStream());
 
                 while(true) {
                     String msg = din.readUTF();
