@@ -18,7 +18,6 @@ public class Server extends JFrame implements ActionListener {
     Server() {
 
         f.setLayout(null);
-
         JPanel p1 = new JPanel();
         p1.setBackground(new Color(7, 94, 84));
         p1.setBounds(0, 0, 450, 70);
@@ -38,7 +37,7 @@ public class Server extends JFrame implements ActionListener {
             }
         });
 
-        ImageIcon i4 = new ImageIcon(ClassLoader.getSystemResource("icons/1.png"));
+        ImageIcon i4 = new ImageIcon(ClassLoader.getSystemResource("icons/HOD.jpg"));
         Image i5 = i4.getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT);
         ImageIcon i6 = new ImageIcon(i5);
         JLabel profile = new JLabel(i6);
@@ -66,7 +65,7 @@ public class Server extends JFrame implements ActionListener {
         morevert.setBounds(420, 20, 10, 25);
         p1.add(morevert);
 
-        JLabel name = new JLabel("Gaitonde");
+        JLabel name = new JLabel("H.O.D. Sir");
         name.setBounds(110, 15, 100, 18);
         name.setForeground(Color.WHITE);
         name.setFont(new Font("SAN_SERIF", Font.BOLD, 18));
