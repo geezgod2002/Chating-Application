@@ -17,10 +17,9 @@ public class Client implements ActionListener {
 
     static DataOutputStream dout;
 
-    Client() {
+    Client(){
 
         f.setLayout(null);
-
         JPanel p1 = new JPanel();
         p1.setBackground(new Color(7, 94, 84));
         p1.setBounds(0, 0, 450, 70);
@@ -81,8 +80,9 @@ public class Client implements ActionListener {
         p1.add(status);
 
         a1 = new JPanel();
-        a1.setBounds(5, 75, 440, 570);
-        f.add(a1);
+        JScrollPane sp = new JScrollPane(a1);
+        sp.setBounds(5, 75, 440, 570);
+        f.add(sp);
 
         text = new JTextField();
         text.setBounds(5, 655, 310, 40);
@@ -138,7 +138,8 @@ public class Client implements ActionListener {
 
         JLabel output = new JLabel("<html><p style=\"width: 150px\">" + out + "</p></html>");
         output.setFont(new Font("Tahoma", Font.PLAIN, 16));
-        output.setBackground(new Color(37, 211, 102));
+        output.setBackground(new Color(0,0,0));
+        output.setForeground(Color.WHITE);
         output.setOpaque(true);
         output.setBorder(new EmptyBorder(15, 15, 15, 50));
 
@@ -159,7 +160,7 @@ public class Client implements ActionListener {
         new Client();
 
         try {
-            Socket s = new Socket("127.0.0.1", 6001);
+            Socket s = new Socket("127.0.0.1", 6001); //127.0.0.1 this is host name for local and 192.168.137.1 for dual device
             DataInputStream din = new DataInputStream(s.getInputStream());
             dout = new DataOutputStream(s.getOutputStream());
 

@@ -65,6 +65,8 @@ public class Server extends JFrame implements ActionListener {
         morevert.setBounds(420, 20, 10, 25);
         p1.add(morevert);
 
+
+
         JLabel name = new JLabel("H.O.D. Sir");
         name.setBounds(110, 15, 100, 18);
         name.setForeground(Color.WHITE);
@@ -78,8 +80,9 @@ public class Server extends JFrame implements ActionListener {
         p1.add(status);
 
         a1 = new JPanel();
-        a1.setBounds(5, 75, 440, 570);
-        f.add(a1);
+        JScrollPane sp = new JScrollPane(a1);
+        sp.setBounds(5, 75, 440, 570);
+        f.add(sp);
 
         text = new JTextField();
         text.setBounds(5, 655, 310, 40);
@@ -113,7 +116,7 @@ public class Server extends JFrame implements ActionListener {
             JPanel right = new JPanel(new BorderLayout());
             right.add(p2, BorderLayout.LINE_END);
             vertical.add(right);
-            vertical.add(Box.createVerticalStrut(15));
+            vertical.add(Box.createVerticalStrut(20));
 
             a1.add(vertical, BorderLayout.PAGE_START);
 
@@ -135,7 +138,8 @@ public class Server extends JFrame implements ActionListener {
 
         JLabel output = new JLabel("<html><p style=\"width: 150px\">" + out + "</p></html>");
         output.setFont(new Font("Tahoma", Font.PLAIN, 16));
-        output.setBackground(new Color(37, 211, 102));
+        output.setBackground(new Color(0,0,0));
+        output.setForeground(Color.WHITE);
         output.setOpaque(true);
         output.setBorder(new EmptyBorder(15, 15, 15, 50));
 
