@@ -1,13 +1,14 @@
-import javax.swing.*;
-import javax.swing.border.*;
-import java.awt.*;
-import java.awt.event.*;
-import java.util.*;
-import java.text.*;
-import java.net.*;
-import java.io.*;
+// These are the libraries that we import to run this code
+import javax.swing.*;  // This line of code will provide classes to the code to use java swing api (JButton ,JTextField, etc)
+import javax.swing.border.*; // This package will use for giving border to swing components.
+import java.awt.*;// this package is used for creating G.U.I. (Frame , Panel, Button , Label ,etc).
+import java.awt.event.*;// It is used for handaling events in G.U.I. .
+import java.util.*;//this package will import utility package that contain (Scanner, hashmap, etc).
+import java.text.*;// thios package is used for fprmating and passing the text textual data .
+import java.net.*;// This package is used for networking operation for code (Socket n all).
+import java.io.*;// This package is used for input/output operation's.
 
-public class Client implements ActionListener {
+public class Client implements ActionListener {  // This is a class (main class)
 
     JTextField text;
     static JPanel a1;
@@ -17,8 +18,11 @@ public class Client implements ActionListener {
 
     static DataOutputStream dout;
 
-    Client(){
-
+    Client() {
+        // code for initializingand setting up user interface
+        // In this code we were Usinfg every instance of class like (JPanel,ImageIcon,Image,JLabel,JScrollPane,Jbutton these all come from javax.swing.*;)
+        // In This all the set components come from  java.awt.*; , set component mean (setbackground , setBounds , setLayout, etc ).
+        // f is frame that comes from Swing package .
         f.setLayout(null);
         JPanel p1 = new JPanel();
         p1.setBackground(new Color(7, 94, 84));
@@ -60,7 +64,7 @@ public class Client implements ActionListener {
         phone.setBounds(360, 20, 35, 30);
         p1.add(phone);
 
-        ImageIcon i13 = new ImageIcon(ClassLoader.getSystemResource("icons/3icon.png"));
+        ImageIcon i13 = new ImageIcon(("icons/3icon.png")); //ClassLoader.getSystemResource
         Image i14 = i13.getImage().getScaledInstance(10, 25, Image.SCALE_DEFAULT);
         ImageIcon i15 = new ImageIcon(i14);
         JLabel morevert = new JLabel(i15);
@@ -95,7 +99,25 @@ public class Client implements ActionListener {
         send.setForeground(Color.WHITE);
         send.addActionListener(this);
         send.setFont(new Font("SAN_SERIF", Font.PLAIN, 16));
+
+        // Additional modifications for button design
+        send.setFocusPainted(false);  // Remove focus highlight
+        send.setBorderPainted(false);  // Remove button border
+        send.setOpaque(true);  // Make the button background opaque
+
+        // Add a hover effect using a MouseListener
+        send.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                send.setBackground(new Color(15, 124, 108));
+            }
+
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                send.setBackground(new Color(7, 94, 84));
+            }
+        });
+
         f.add(send);
+
 
         f.setSize(450, 700);
         f.setLocation(800, 50);
@@ -106,6 +128,8 @@ public class Client implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent ae) {
+        // Code for handling the action event, typically when the "Send" button is clicked.
+        //
         try {
             String out = text.getText();
 
@@ -133,6 +157,7 @@ public class Client implements ActionListener {
     }
 
     public static JPanel formatLabel(String out) {
+        // Code for formatting the message label within a JPanel.
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 
@@ -157,18 +182,17 @@ public class Client implements ActionListener {
     }
 
     public static void main(String[] args) {
+        // Code for creating an instance of Client and setting up the client-server communication.
         new Client();
 
         try {
             Socket s = new Socket("127.0.0.1", 6001); //127.0.0.1 this is host name for local and 192.168.137.1 for dual device
             DataInputStream din = new DataInputStream(s.getInputStream());
             dout = new DataOutputStream(s.getOutputStream());
-
             while(true) {
                 a1.setLayout(new BorderLayout());
                 String msg = din.readUTF();
                 JPanel panel = formatLabel(msg);
-
                 JPanel left = new JPanel(new BorderLayout());
                 left.add(panel, BorderLayout.LINE_START);
                 vertical.add(left);
