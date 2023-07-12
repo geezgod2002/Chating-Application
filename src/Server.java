@@ -19,12 +19,52 @@ public class Server extends JFrame implements ActionListener {
 
         f.setLayout(null);
         JPanel p1 = new JPanel();
-        p1.setBackground(new Color(7, 94, 84));
+        p1.setBackground(new Color(81, 125, 162));
         p1.setBounds(0, 0, 450, 70);
         p1.setLayout(null);
         f.add(p1);
 
-        ImageIcon i1 = new ImageIcon(("icons/3.png"));
+        // Create the panel for the clear button
+        /*JPanel buttonPanel = new JPanel();
+        buttonPanel.setBackground(Color.DARK_GRAY);
+        buttonPanel.setBounds(320, 10, 123, 40);
+        buttonPanel.setLayout(new BorderLayout());
+
+        // Create the clear button
+        JButton clearButton = new JButton("Clear Chat");
+        clearButton.setBackground(Color.DARK_GRAY);
+        clearButton.setForeground(Color.WHITE);
+
+        // Additional modifications for button design
+        clearButton.setFocusPainted(false);  // Remove focus highlight
+        clearButton.setBorderPainted(false);  // Remove button border
+        clearButton.setOpaque(true);  // Make the button background opaque
+
+        // Add a hover effect using a MouseListener
+        clearButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                clearButton.setBackground(Color.DARK_GRAY);
+            }
+
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                clearButton.setBackground(Color.DARK_GRAY);
+            }
+        });
+
+
+        clearButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                clearChat();
+            }
+        });
+
+        // Add the clear button to the button panel
+        buttonPanel.add(clearButton, BorderLayout.CENTER);
+
+        // Add the button panel to the p1 panel
+        p1.add(buttonPanel);*/
+
+        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icons/3.png"));
         Image i2 = i1.getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT);
         ImageIcon i3 = new ImageIcon(i2);
         JLabel back = new JLabel(i3);
@@ -44,14 +84,20 @@ public class Server extends JFrame implements ActionListener {
         profile.setBounds(40, 10, 50, 50);
         p1.add(profile);
 
-        ImageIcon i7 = new ImageIcon(ClassLoader.getSystemResource("icons/video.png"));
+        ImageIcon i7 = new ImageIcon(ClassLoader.getSystemResource("icons/Dustbin.png"));
         Image i8 = i7.getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT);
         ImageIcon i9 = new ImageIcon(i8);
-        JLabel video = new JLabel(i9);
-        video.setBounds(300, 20, 30, 30);
-        p1.add(video);
+        JLabel Dustbin = new JLabel(i9);
+        Dustbin.setBounds(400, 20, 30, 30);
 
-        ImageIcon i10 = new ImageIcon(ClassLoader.getSystemResource("icons/phone.png"));
+        p1.add(Dustbin);
+        Dustbin.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                clearChat();
+            }
+        });
+        /*ImageIcon i10 = new ImageIcon(ClassLoader.getSystemResource("icons/phone.png"));
         Image i11 = i10.getImage().getScaledInstance(35, 30, Image.SCALE_DEFAULT);
         ImageIcon i12 = new ImageIcon(i11);
         JLabel phone = new JLabel(i12);
@@ -63,7 +109,7 @@ public class Server extends JFrame implements ActionListener {
         ImageIcon i15 = new ImageIcon(i14);
         JLabel morevert = new JLabel(i15);
         morevert.setBounds(420, 20, 10, 25);
-        p1.add(morevert);
+        p1.add(morevert);*/
 
 
 
@@ -91,10 +137,27 @@ public class Server extends JFrame implements ActionListener {
 
         JButton send = new JButton("Send");
         send.setBounds(320, 655, 123, 40);
-        send.setBackground(new Color(7, 94, 84));
+        send.setBackground(new Color(81, 125, 162));
         send.setForeground(Color.WHITE);
         send.addActionListener(this);
         send.setFont(new Font("SAN_SERIF", Font.PLAIN, 16));
+
+        // Additional modifications for button design
+        send.setFocusPainted(false);  // Remove focus highlight
+        send.setBorderPainted(false);  // Remove button border
+        send.setOpaque(true);  // Make the button background opaque
+
+        // Add a hover effect using a MouseListener
+        send.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                send.setBackground(new Color(81, 124, 168));
+            }
+
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                send.setBackground(new Color(81, 125, 162));
+            }
+        });
+
         f.add(send);
 
         f.setSize(450, 700);
@@ -103,6 +166,12 @@ public class Server extends JFrame implements ActionListener {
         f.getContentPane().setBackground(Color.WHITE);
 
         f.setVisible(true);
+    }
+
+    private void clearChat() {
+        vertical.removeAll();
+        vertical.revalidate();
+        vertical.repaint();
     }
 
     public void actionPerformed(ActionEvent ae) {
@@ -169,7 +238,6 @@ public class Server extends JFrame implements ActionListener {
                 while(true) {
                     String msg = din.readUTF();
                     JPanel panel = formatLabel(msg);
-
                     JPanel left = new JPanel(new BorderLayout());
                     left.add(panel, BorderLayout.LINE_START);
                     vertical.add(left);
