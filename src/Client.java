@@ -1,12 +1,12 @@
 // These are the libraries that we import to run this code
 import javax.swing.*;  // This line of code will provide classes to the code to use java swing api (JButton ,JTextField, etc)
 import javax.swing.border.*; // This package will use for giving border to swing components.
-import java.awt.*;// this package is used for creating G.U.I. (Frame , Panel, Button , Label ,etc).
-import java.awt.event.*;// It is used for handaling events in G.U.I. .
-import java.util.*;//this package will import utility package that contain (Scanner, hashmap, etc).
-import java.text.*;// thios package is used for fprmating and passing the text textual data .
-import java.net.*;// This package is used for networking operation for code (Socket n all).
-import java.io.*;// This package is used for input/output operation's.
+import java.awt.*; // this package is used for creating G.U.I. (Frame , Panel, Button , Label ,etc).
+import java.awt.event.*; // It is used for handaling events in G.U.I. .
+import java.util.*; //this package will import utility package that contain (Scanner, hashmap, etc).
+import java.text.*; // thios package is used for fprmating and passing the text textual data .
+import java.net.*; // This package is used for networking operation for code (Socket n all).
+import java.io.*; // This package is used for input/output operation's.
 
 public class Client implements ActionListener {  // This is a class (main class)
 
@@ -217,7 +217,7 @@ public class Client implements ActionListener {  // This is a class (main class)
 
         JLabel output = new JLabel("<html><p style=\"width: 150px\">" + out + "</p></html>");
         output.setFont(new Font("Tahoma", Font.PLAIN, 16));
-        output.setBackground(new Color(0,0,0));
+        output.setBackground(new Color(81,125,162));
         output.setForeground(Color.WHITE);
         output.setOpaque(true);
         output.setBorder(new EmptyBorder(15, 15, 15, 50));

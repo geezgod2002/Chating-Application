@@ -207,7 +207,7 @@ public class Server extends JFrame implements ActionListener {
 
         JLabel output = new JLabel("<html><p style=\"width: 150px\">" + out + "</p></html>");
         output.setFont(new Font("Tahoma", Font.PLAIN, 16));
-        output.setBackground(new Color(0,0,0));
+        output.setBackground(new Color(81,125,162));
         output.setForeground(Color.WHITE);
         output.setOpaque(true);
         output.setBorder(new EmptyBorder(15, 15, 15, 50));
